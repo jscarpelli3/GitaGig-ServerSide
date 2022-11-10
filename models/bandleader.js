@@ -13,14 +13,30 @@ module.exports = (sequelize, DataTypes) => {
   }
   Bandleader.init(
     {
-      name: DataTypes.STRING,
+      name: { 
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       band: DataTypes.STRING,
       socialMedia: DataTypes.STRING,
-      blImage: DataTypes.STRING
+      blImage: DataTypes.STRING,
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: true
+        }
+      },
+      passwordDigest: {
+        type: DataTypes.STRING,
+        allowNull: false
+      }
     },
     {
       sequelize,
-      modelName: 'Bandleader'
+      modelName: 'Bandleader',
+      tableName: 'bandleaders'
     }
   )
   return Bandleader
