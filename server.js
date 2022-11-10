@@ -1,9 +1,11 @@
 const express = require('express')
 const cors = require('cors')
+const logger = require('morgan')
+const bodyParser = require('body-parser')
+const AuthRouter = require('./routes/AuthRouter')
+const AppRouter = require('./routes/AppRouter')
 
 const app = express()
-
-const AppRouter = require('./routes/AppRouter')
 
 const PORT = process.env.PORT || 3001
 
