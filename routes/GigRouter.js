@@ -2,22 +2,30 @@ const router = require('express').Router()
 const controller = require('../controllers/GigController')
 const middleware = require('../middleware')
 
+router.get(
+  '/',
+  // middleware.stripToken,
+  // middleware.verifyToken,
+  controller.GetGigs
+)
 router.post(
-  '/gigs/',
-  middleware.stripToken,
-  middleware.verifyToken,
+  '/',
+  // middleware.stripToken,
+  // middleware.verifyToken,
   controller.CreateGig
 )
 router.put(
-  '/gigs/:gigId',
-  middleware.stripToken,
-  middleware.verifyToken,
+  '/:gigId',
+  // middleware.stripToken,
+  // middleware.verifyToken,
   controller.UpdateGig
 )
 
 router.delete(
-  ',gigs/:gigId',
-  middleware.stripToken,
-  middleware.verifyToken,
+  '/:gigId',
+  // middleware.stripToken,
+  // middleware.verifyToken,
   controller.DeleteGig
 )
+
+module.exports = router
