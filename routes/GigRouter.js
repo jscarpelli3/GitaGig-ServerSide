@@ -8,6 +8,14 @@ router.get(
   // middleware.verifyToken,
   controller.GetGigs
 )
+
+router.get(
+  '/bandleaderId',
+  // middleware.stripToken,
+  // middleware.verifyToken,
+  controller.GetGigsByBandleader
+)
+
 router.post(
   '/',
   // middleware.stripToken,
@@ -21,11 +29,11 @@ router.put(
   controller.UpdateGig
 )
 
-// router.delete(
-//   '/:gigId',
-//   middleware.stripToken,
-//   middleware.verifyToken,
-//   controller.DeleteGig
-// )
+router.delete(
+  '/:gigId',
+  // middleware.stripToken,
+  // middleware.verifyToken,
+  controller.DeleteGig
+)
 
 module.exports = router
