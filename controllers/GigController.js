@@ -10,6 +10,17 @@ const GetGigs = async (req, res) => {
   }
 }
 
+const GetGigsByBandleader = async (req, res) => {
+  try {
+    const gigs = await Gig.findAll({
+      where: { bandleaderId: req.params.bandleaderId }
+    })
+    res.send(gigs)
+  } catch (error) {
+    throw error
+  }
+}
+
 const CreateGig = async (req, res) => {
   try {
     const gig = await Gig.create({ ...req.body })
@@ -44,5 +55,6 @@ module.exports = {
   UpdateGig,
   DeleteGig,
   CreateGig,
-  GetGigs
+  GetGigs,
+  GetGigsByBandleader
 }

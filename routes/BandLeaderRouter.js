@@ -3,7 +3,7 @@ const controller = require('../controllers/BandLeaderController')
 const middleware = require('../middleware')
 
 router.get(
-  '/:bandleader_id',
+  '/:bandleaderId',
   // middleware.stripToken,
   // middleware.verifyToken
   controller.getBandleaderById
