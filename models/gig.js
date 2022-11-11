@@ -10,14 +10,26 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Gig.belongsTo(models.Bandleader, {
+        foreignKey: 'bandleaderId'
+      })
+      Gig.hasMany(models.Musician, {
+        foreignKey: 'gigId'
+      })
     }
   }
   Gig.init({
     venueName: DataTypes.STRING,
     location: DataTypes.STRING,
     gigType: DataTypes.STRING,
-    bandleaderId: DataTypes.INTEGER
+    bandleaderId: {
+      type: DataTypes.INTEGER,
+    onDelete: 'CASCADE',
+    references: {
+      model:'bandleaders',
+      key: 'id'
+    }
+  }
   }, {
     sequelize,
     modelName: 'Gig',
