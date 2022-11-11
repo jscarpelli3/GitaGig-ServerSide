@@ -4,8 +4,8 @@ const middleware = require('../middleware')
 
 router.post(
   '/gigs/',
-  middleware.stripToken,
-  middleware.verifyToken,
+  // middleware.stripToken,
+  // middleware.verifyToken,
   controller.CreateGig
 )
 router.put(
@@ -21,3 +21,5 @@ router.delete(
   middleware.verifyToken,
   controller.DeleteGig
 )
+
+module.exports = router

@@ -3,6 +3,8 @@ const cors = require('cors')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
 const AuthRouter = require('./routes/AuthRouter')
+const BandLeaderRouter = require('./routes/BandLeaderRouter')
+const GigRouter = require('./routes/GigRouter')
 const AppRouter = require('./routes/AppRouter')
 
 const app = express()

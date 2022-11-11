@@ -5,9 +5,11 @@ const middleware = require('../middleware')
 router.get(
   '/:bandleader_id',
   middleware.stripToken,
-  middleware.verifyToken,
-  controller.GetBandleaderById
+  middleware.verifyToken
+  // controller.GetBandleaderById
 )
+
+module.exports = router
 
 // router.post('/',
 // middleware.stripToken,
