@@ -1,6 +1,15 @@
 const { Gig } = require('../models')
 const middleware = require('../middleware')
 
+const GetGigs = async (req, res) => {
+  try {
+    const gigs = await Gig.findAll()
+    res.send(gigs)
+  } catch (error) {
+    throw error
+  }
+}
+
 const CreateGig = async (req, res) => {
   try {
     const gig = await Gig.create({ ...req.body })
@@ -34,5 +43,6 @@ const DeleteGig = async (req, res) => {
 module.exports = {
   UpdateGig,
   DeleteGig,
-  CreateGig
+  CreateGig,
+  GetGigs
 }
