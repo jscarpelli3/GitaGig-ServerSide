@@ -25,7 +25,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       gigId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model:'gigs',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

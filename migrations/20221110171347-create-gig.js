@@ -19,8 +19,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       bandleaderId: {
-        type: Sequelize.INTEGER
-      },
+        type: Sequelize.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model:'bandleaders',
+        key: 'id'
+      }
+    },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
