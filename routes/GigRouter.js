@@ -21,11 +21,11 @@ router.put(
   controller.UpdateGig
 )
 
-router.delete(
-  '/:gigId',
-  // middleware.stripToken,
-  // middleware.verifyToken,
-  controller.DeleteGig
-)
+// router.delete(
+//   '/:gigId',
+//   middleware.stripToken,
+//   middleware.verifyToken,
+//   controller.DeleteGig
+// )
 
 module.exports = router
