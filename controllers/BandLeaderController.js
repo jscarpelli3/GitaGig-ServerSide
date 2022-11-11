@@ -1,9 +1,9 @@
-const { Bandleader } = require('../models')
+const { Bandleader, Gig } = require('../models')
 const middleware = require('../middleware')
 
 const getBandleaderById = async () => {
   try {
-    const curBandleader = await Gig.findAll({
+    const curBandleader = await Bandleader.findAll({
       where: { id: req.params.bandleaderId }
     })
     res.send(curBandleader)
