@@ -25,7 +25,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       gigId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model:'gigs',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -38,6 +43,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('musicians');
+    await queryInterface.dropTable('musicians'); 
   }
 };
