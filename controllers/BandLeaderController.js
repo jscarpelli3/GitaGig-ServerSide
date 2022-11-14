@@ -1,7 +1,7 @@
 const { Bandleader, Gig } = require('../models')
 const middleware = require('../middleware')
 
-const getBandleaderById = async () => {
+const getBandleaderById = async (req, res) => {
   try {
     const curBandleader = await Bandleader.findAll({
       where: { id: req.params.bandleaderId }
@@ -12,6 +12,21 @@ const getBandleaderById = async () => {
   }
 }
 
+const getBandleaderByIdwithGigs = async (req, res) => {
+  try {
+    const curBandleader = await Bandleader.findAll({
+      where: { id: req.params.bandleaderId },
+      include: Gig,
+      raw: true,
+      nest: true
+    })
+    res.send(curBandleader)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
-  getBandleaderById
+  getBandleaderById,
+  getBandleaderByIdwithGigs
 }

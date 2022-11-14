@@ -1,4 +1,4 @@
-const { Gig } = require('../models')
+const { Gig, Musician } = require('../models')
 const middleware = require('../middleware')
 
 const GetGigs = async (req, res) => {
@@ -16,6 +16,20 @@ const GetGigsByBandleader = async (req, res) => {
       where: { bandleaderId: req.params.bandleaderId }
     })
     res.send(gigs)
+  } catch (error) {
+    throw error
+  }
+}
+
+const GetGigWithMusicians = async (req, res) => {
+  try {
+    const gigDetails = await Gig.findAll({
+      where: { id: req.params.gigId },
+      include: Musician,
+      raw: true,
+      nest: true
+    })
+    res.send(gigDetails)
   } catch (error) {
     throw error
   }
@@ -56,5 +70,6 @@ module.exports = {
   DeleteGig,
   CreateGig,
   GetGigs,
-  GetGigsByBandleader
+  GetGigsByBandleader,
+  GetGigWithMusicians
 }

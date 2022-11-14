@@ -9,11 +9,18 @@ router.get(
   controller.GetGigs
 )
 
+// router.get(
+//   '/:bandleaderId',
+//   // middleware.stripToken,
+//   // middleware.verifyToken,
+//   controller.GetGigsByBandleader
+// )
+
 router.get(
-  '/bandleaderId',
+  '/:gigId',
   // middleware.stripToken,
   // middleware.verifyToken,
-  controller.GetGigsByBandleader
+  controller.GetGigWithMusicians
 )
 
 router.post(

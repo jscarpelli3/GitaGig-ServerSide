@@ -6,7 +6,7 @@ router.get(
   '/:bandleaderId',
   // middleware.stripToken,
   // middleware.verifyToken
-  controller.getBandleaderById
+  controller.getBandleaderByIdwithGigs
 )
 
 module.exports = router

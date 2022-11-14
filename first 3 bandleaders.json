@@ -1,0 +1,24 @@
+{
+  "email":"Walter@jon.com",
+	"password":"Walter",
+	"name": "Walter",
+	"band": "Walters Band",
+  "socialMedia": "",
+	"blImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Les_Brown_1947.JPG/220px-Les_Brown_1947.JPG"
+},
+{
+  "email":"TheDude@jon.com",
+	"password":"TheDude",
+	"name": "TheDude",
+	"band": "TheDudes Band",
+  "socialMedia": "",
+	"blImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Les_Brown_1947.JPG/220px-Les_Brown_1947.JPG"
+},
+{
+  "email":"Donny@jon.com",
+	"password":"Donny",
+	"name": "Donny",
+	"band": "Donnys Band",
+  "socialMedia": "",
+	"blImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Les_Brown_1947.JPG/220px-Les_Brown_1947.JPG"
+}
