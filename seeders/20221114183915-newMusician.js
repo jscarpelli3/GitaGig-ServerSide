@@ -10,7 +10,7 @@ module.exports = {
       genre: falso.randMusicGenre(),
       about: falso.randText({ charCount: 30 }),
       image: falso.randUrl(),
-      gigId: falso.randNumber({ min: 1, max: 20 }),
+      gigId: falso.randNumber({ min: 1, max: 12 }),
       createdAt: new Date(),
       updatedAt: new Date()
     }))
@@ -21,6 +21,3 @@ module.exports = {
     await queryInterface.bulkDelete('musicians')
   }
 }
-
-// const b = await Drummer.findAll({ raw: true })
-//   let r = Math.floor(Math.random() * b.length)

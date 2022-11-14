@@ -10,7 +10,7 @@ router.get(
 )
 
 router.get(
-  '/gigId',
+  '/:gigId',
   // middleware.stripToken,
   // middleware.verifyToken,
   controller.GetMusiciansByGig
