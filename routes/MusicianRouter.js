@@ -22,12 +22,12 @@ router.get(
 //   // middleware.verifyToken,
 //   controller.CreateGig
 // )
-// router.put(
-//   '/:gigId',
-//   // middleware.stripToken,
-//   // middleware.verifyToken,
-//   controller.UpdateGig
-// )
+router.put(
+  '/:musicianId',
+  // middleware.stripToken,
+  // middleware.verifyToken,
+  controller.UpdateMusician
+)
 
 // router.delete(
 //   '/:gigId',

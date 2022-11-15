@@ -4,8 +4,8 @@ const middleware = require('../middleware')
 
 router.get(
   '/:bandleaderId',
-  // middleware.stripToken,
-  // middleware.verifyToken
+  middleware.stripToken,
+  middleware.verifyToken,
   controller.getBandleaderByIdwithGigs
 )
 
