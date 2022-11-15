@@ -30,17 +30,17 @@ const GetMusiciansByGig = async (req, res) => {
 //   }
 // }
 
-// const UpdateGig = async (req, res) => {
-//   try {
-//     const updatedGig = await Gig.update(
-//       { ...req.body },
-//       { where: { id: req.params.gigId }, returning: true }
-//     )
-//     res.send(updatedGig)
-//   } catch (error) {
-//     throw error
-//   }
-// }
+const UpdateMusician = async (req, res) => {
+  try {
+    const updatedMusician = await Musician.update(
+      { ...req.body },
+      { where: { id: req.params.musicianId }, returning: true }
+    )
+    res.send(updatedMusician)
+  } catch (error) {
+    throw error
+  }
+}
 
 // const DeleteGig = async (req, res) => {
 //   try {
@@ -53,8 +53,8 @@ const GetMusiciansByGig = async (req, res) => {
 
 module.exports = {
   GetMusiciansByGig,
-  GetMusicians
-  // UpdateMusician,
+  GetMusicians,
+  UpdateMusician,
   // DeleteMusician,
   // CreateMusician,
 }
