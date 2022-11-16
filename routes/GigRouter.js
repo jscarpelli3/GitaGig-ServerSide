@@ -4,8 +4,8 @@ const middleware = require('../middleware')
 
 router.get(
   '/',
-  // middleware.stripToken,
-  // middleware.verifyToken,
+  middleware.stripToken,
+  middleware.verifyToken,
   controller.GetGigs
 )
 
@@ -18,21 +18,21 @@ router.get(
 
 router.get(
   '/:gigId',
-  // middleware.stripToken,
-  // middleware.verifyToken,
+  middleware.stripToken,
+  middleware.verifyToken,
   controller.GetGigWithMusicians
 )
 
 router.post(
   '/',
-  // middleware.stripToken,
-  // middleware.verifyToken,
+  middleware.stripToken,
+  middleware.verifyToken,
   controller.CreateGig
 )
 router.put(
   '/:gigId',
-  // middleware.stripToken,
-  // middleware.verifyToken,
+  middleware.stripToken,
+  middleware.verifyToken,
   controller.UpdateGig
 )
 

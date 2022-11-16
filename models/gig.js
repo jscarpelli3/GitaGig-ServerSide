@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Gig extends Model {
     /**
@@ -18,22 +16,30 @@ module.exports = (sequelize, DataTypes) => {
       })
     }
   }
-  Gig.init({
-    venueName: DataTypes.STRING,
-    location: DataTypes.STRING,
-    gigType: DataTypes.STRING,
-    bandleaderId: {
-      type: DataTypes.INTEGER,
-    onDelete: 'CASCADE',
-    references: {
-      model:'bandleaders',
-      key: 'id'
+  Gig.init(
+    {
+      venueName: DataTypes.STRING,
+      location: DataTypes.STRING,
+      time: DataTypes.STRING,
+      date: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+      gigType: DataTypes.STRING,
+      bandleaderId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'bandleaders',
+          key: 'id'
+        }
+      }
+    },
+    {
+      sequelize,
+      modelName: 'Gig',
+      tableName: 'gigs'
     }
-  }
-  }, {
-    sequelize,
-    modelName: 'Gig',
-    tableName: 'gigs'
-  });
-  return Gig;
-};
+  )
+  return Gig
+}
