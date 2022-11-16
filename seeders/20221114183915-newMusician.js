@@ -8,6 +8,7 @@ module.exports = {
       name: falso.randFirstName(),
       socialMedia: falso.randUrl(),
       genre: falso.randMusicGenre(),
+      instrument: falso.randSkill(),
       about: falso.randText({ charCount: 30 }),
       image: falso.randUrl(),
       gigId: falso.randNumber({ min: 1, max: 12 }),
