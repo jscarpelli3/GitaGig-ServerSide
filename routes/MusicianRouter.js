@@ -16,12 +16,12 @@ router.get(
   controller.GetMusiciansByGig
 )
 
-// router.post(
-//   '/',
-//   // middleware.stripToken,
-//   // middleware.verifyToken,
-//   controller.CreateGig
-// )
+router.post(
+  '/',
+  // middleware.stripToken,
+  // middleware.verifyToken,
+  controller.CreateMusician
+)
 router.put(
   '/:musicianId',
   // middleware.stripToken,

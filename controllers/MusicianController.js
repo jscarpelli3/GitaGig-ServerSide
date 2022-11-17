@@ -21,14 +21,14 @@ const GetMusiciansByGig = async (req, res) => {
   }
 }
 
-// const CreateGig = async (req, res) => {
-//   try {
-//     const gig = await Gig.create({ ...req.body })
-//     res.send(gig)
-//   } catch (error) {
-//     throw error
-//   }
-// }
+const CreateMusician = async (req, res) => {
+  try {
+    const musician = await Musician.create({ ...req.body })
+    res.send(musician)
+  } catch (error) {
+    throw error
+  }
+}
 
 const UpdateMusician = async (req, res) => {
   try {
@@ -56,5 +56,5 @@ module.exports = {
   GetMusicians,
   UpdateMusician,
   // DeleteMusician,
-  // CreateMusician,
+  CreateMusician
 }
