@@ -3,7 +3,9 @@ const middleware = require('../middleware')
 
 const GetMusicians = async (req, res) => {
   try {
-    const musicians = await Musician.findAll()
+    const musicians = await Musician.findAll({
+      where: { gigId: null }
+    })
     res.send(musicians)
   } catch (error) {
     throw error
