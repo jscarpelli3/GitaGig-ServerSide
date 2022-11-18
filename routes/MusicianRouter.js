@@ -2,38 +2,11 @@ const router = require('express').Router()
 const controller = require('../controllers/MusicianController')
 const middleware = require('../middleware')
 
-router.get(
-  '/',
-  // middleware.stripToken,
-  // middleware.verifyToken,
-  controller.GetMusicians
-)
+router.get('/', controller.GetMusicians)
 
-router.get(
-  '/:gigId',
-  // middleware.stripToken,
-  // middleware.verifyToken,
-  controller.GetMusiciansByGig
-)
+router.get('/:gigId', controller.GetMusiciansByGig)
 
-router.post(
-  '/',
-  // middleware.stripToken,
-  // middleware.verifyToken,
-  controller.CreateMusician
-)
-router.put(
-  '/:musicianId',
-  // middleware.stripToken,
-  // middleware.verifyToken,
-  controller.UpdateMusician
-)
-
-// router.delete(
-//   '/:gigId',
-//   // middleware.stripToken,
-//   // middleware.verifyToken,
-//   controller.DeleteGig
-// )
+router.post('/', controller.CreateMusician)
+router.put('/:musicianId', controller.UpdateMusician)
 
 module.exports = router

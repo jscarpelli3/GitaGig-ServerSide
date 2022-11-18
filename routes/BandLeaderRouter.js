@@ -10,8 +10,3 @@ router.get(
 )
 
 module.exports = router
-
-// router.post('/',
-// middleware.stripToken,
-// middleware.verifyToken,
-// controller.CreateBandleader)

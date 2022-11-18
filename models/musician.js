@@ -21,7 +21,6 @@ module.exports = (sequelize, DataTypes) => {
       about: DataTypes.STRING,
       image: DataTypes.STRING,
       instrument: DataTypes.STRING,
-      rate: DataTypes.INTEGER,
       gigId: {
         type: DataTypes.INTEGER,
         onDelete: 'CASCADE',
